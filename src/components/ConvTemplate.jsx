@@ -39,7 +39,10 @@ function ConvTemplate({ propsConfig: { inputSearchWord, inputReplaceWith } }) {
         className="bg-light rounded-3 p-3 "
       >
         <Form.Group>
-          <Form.Label className="lead fw-bold text-uppercase mb-2">
+          <Form.Label
+            className="lead fw-bold text-uppercase mb-2"
+            id="inputLabel"
+          >
             input
           </Form.Label>
           <ButtonToolbar
@@ -51,6 +54,7 @@ function ConvTemplate({ propsConfig: { inputSearchWord, inputReplaceWith } }) {
                 type="url"
                 placeholder="Replace me"
                 aria-label="Input group example"
+                aria-describedby="inputLabel"
                 value={input}
                 maxLength="125"
                 onChange={(e) => setInput(e.target.value)}
