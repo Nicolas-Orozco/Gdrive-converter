@@ -82,7 +82,7 @@ function Header() {
               onClick={(e) => {
                 e.target.classList.remove("active");
               }}
-              href="https://github.com/Nicolas-Orozco"
+              href="https://github.com/Nicolas-Orozco/Gdrive-converter"
             >
               <i className="bi bi-github"> Github Repo</i>
             </Nav.Link>
