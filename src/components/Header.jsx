@@ -26,7 +26,7 @@ function Header() {
     `;
   return (
     <Navbar
-      className="bg-primary bg-gradient shadow-sm mb-1 p-1"
+      className="bg-primary bg-gradient shadow-sm mb-1 p-2"
       variant="dark"
       sticky="top"
       expand="lg"
@@ -49,8 +49,8 @@ function Header() {
             Google Drive to Direct Link
           </p>
         </Navbar.Brand>
-        <Navbar.Toggle className="border-0" />
-        <NavbarCollapse>
+        <Navbar.Toggle className="border-0" aria-controls="navbar-nav" />
+        <NavbarCollapse id="navbar-nav">
           <Nav>
             <Nav.Link as={NavLink} to="/" eventKey="1">
               <i className="bi bi-house-door-fill"> Home</i>
@@ -61,23 +61,18 @@ function Header() {
               }
             >
               <NavDropdown.Item as={NavLink} to="/slides" eventKey="2">
-                <i className="bi bi-camera-reels-fill text-warning">
-                  {" "}
-                  <span className="text-secondary">Slides</span>
-                </i>
+                <i className="bi bi-camera-reels-fill" /> Slides
               </NavDropdown.Item>
               <NavDropdown.Item as={NavLink} to="/docs" eventKey="3">
-                <i className="bi bi-file-earmark-text-fill text-primary">
-                  {" "}
-                  Docs
-                </i>
+                <i className="bi bi-file-earmark-text-fill" /> Docs
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item as={NavLink} to="/sheets" eventKey="4">
-                <i className="bi bi-bar-chart-fill text-success"> Sheets</i>
+                <i className="bi bi-bar-chart-fill" /> Sheets
               </NavDropdown.Item>
               <NavDropdown.Item as={NavLink} to="/draw" eventKey="5">
-                <i className="bi bi-brush-fill text-danger">Drawings</i>
+                <i className="bi bi-brush-fill" />
+                Drawings
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link as={NavLink} to="/reader" eventKey="6">
