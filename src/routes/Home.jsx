@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { Container, Row, Col, ListGroup } from "react-bootstrap";
 import "bootstrap-icons/font/bootstrap-icons.css";
