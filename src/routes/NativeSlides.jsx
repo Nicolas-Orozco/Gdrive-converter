@@ -16,7 +16,9 @@ function NativeSlides() {
       <Row>
         <Col className="p-4 mb-3">
           <header>
-            <h1 className="display-5 fw-bold">Converter to Google Slides</h1>
+            <h1 className="display-5 fw-bold">
+              Converter to <span className="text-warning">Google Slides</span>
+            </h1>
           </header>
           <hr />
           <section className="d-flex justify-content-between">

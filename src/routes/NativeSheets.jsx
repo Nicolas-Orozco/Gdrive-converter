@@ -16,7 +16,9 @@ function NativeSheets() {
       <Row>
         <Col className="p-4 mb-3">
           <header>
-            <h1 className="display-5 fw-bold">Converter to Google Sheets</h1>
+            <h1 className="display-5 fw-bold">
+              Converter to <span className="text-success">Google Sheets</span>
+            </h1>
           </header>
           <hr />
           <section className="d-flex justify-content-between">
