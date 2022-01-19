@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 import { NavLink } from "react-router-dom";
-import GdriveLogo from "../assets/images/google-drive.svg";
+import GdriveLogo from "../assets/google-drive.svg";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 function Header() {
