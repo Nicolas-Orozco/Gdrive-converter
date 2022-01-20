@@ -1,6 +1,6 @@
 <h1><img width="200px" alt="Logo" src="https://i.imgur.com/gKcMqJg.png" /></h1>
 
-Google Drive Converter is a basic converter from files stored in Google Drive to direct links to them, without clicking any button.
+<b>Google Drive Converter</b> is a basic converter from files stored in Google Drive to direct links to them, without clicking any button.
 ## Objective:
 To learn React Bootstrap & Router and to help people share files more easily.
 ## Currently supports:
