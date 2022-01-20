@@ -6,6 +6,7 @@ Without clicking any button!!<br/>
 ## Objective:
 To learn React Bootstrap & Router and to help people share files more easily.
 ## Currently supports:
+<img style="display:block" alt="navbar" src="https://i.imgur.com/euk4sZt.png"/>
 - Native Google files:
     - Sheets
     - Docs
