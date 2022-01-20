@@ -1,5 +1,5 @@
 <h1><img width="200px" alt="Logo" src="https://i.imgur.com/gKcMqJg.png" /></h1>
-Just a basic converter from files stored in Google Drive to direct links to them.
+Google Drive Converter is a basic converter from files stored in Google Drive to direct links to them, without clicking any button.
 ## Objective:
 To learn React Bootstrap & Router and to help people share files more easily.
 ## Currently supports:
@@ -11,4 +11,4 @@ To learn React Bootstrap & Router and to help people share files more easily.
 - Reader mode (PDFs, embeds, etc)
 - (Future feature) With File ID
 ## Website Link:
-[GDRIVE Converter](https://support.west-wind.com)
+https://gdrive-converter.vercel.app/
