@@ -6,8 +6,12 @@ Without clicking any button!!<br/>
 ## Objective:
 To learn React Bootstrap & Router and to help people share files more easily.
 
-<img style="display:inline" width="50" alt="react bootstrap" src="https://pbs.twimg.com/profile_images/610586699798835201/OuezNT-e_400x400.png"/>
-<img style="display:inline" width="50" alt="react bootstrap" src="https://visual-engin.com/wp-content/uploads/sites/3/2016/07/1_TKvlTeNqtkp1s-eVB5Hrvg@2x.png"/>
+<p float="left">
+  <img src="https://pbs.twimg.com/profile_images/610586699798835201/OuezNT-e_400x400.png" width="50" />
+  <img src="https://visual-engin.com/wp-content/uploads/sites/3/2016/07/1_TKvlTeNqtkp1s-eVB5Hrvg@2x.png" width="50" /> 
+  <img src="/img3.png" width="100" />
+</p>
+
 ## Currently supports:
 <img style="display:block" alt="navbar" src="https://i.imgur.com/euk4sZt.png"/>
 
