@@ -8,8 +8,7 @@ To learn React Bootstrap & Router and to help people share files more easily.
 
 <p float="left">
   <img src="https://pbs.twimg.com/profile_images/610586699798835201/OuezNT-e_400x400.png" width="50" />
-  <img src="https://visual-engin.com/wp-content/uploads/sites/3/2016/07/1_TKvlTeNqtkp1s-eVB5Hrvg@2x.png" width="50" /> 
-  <img src="/img3.png" width="100" />
+  <img src="https://visual-engin.com/wp-content/uploads/sites/3/2016/07/1_TKvlTeNqtkp1s-eVB5Hrvg@2x.png" width="100" /> 
 </p>
 
 ## Currently supports:
