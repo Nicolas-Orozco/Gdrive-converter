@@ -8,6 +8,8 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 function Header() {
   const Theme = `
   #headerBrand{
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
     opacity: 0.85;
   }

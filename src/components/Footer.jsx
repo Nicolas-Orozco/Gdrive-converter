@@ -5,15 +5,28 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 function Footer() {
   const Theme = `
   #footerHeartIcon{
-    animation : grow 2s infinite alternate;
+    -webkit-animation : grow 2s infinite alternate;
+            animation : grow 2s infinite alternate;
   }
   @media (prefers-reduced-motion : no-preference) {
-    @keyframes grow{
+    @-webkit-keyframes grow{
       from {
-        transform: scale(0.8);
+        -webkit-transform: scale(0.8);
+                transform: scale(0.8);
       }
       to {
-        transform: scale(1);
+        -webkit-transform: scale(1);
+                transform: scale(1);
+      }
+    }
+    @keyframes grow{
+      from {
+        -webkit-transform: scale(0.8);
+                transform: scale(0.8);
+      }
+      to {
+        -webkit-transform: scale(1);
+                transform: scale(1);
       }
     }
   }
