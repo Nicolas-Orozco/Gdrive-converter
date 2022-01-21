@@ -21,8 +21,8 @@ function Header() {
       display: none !important;
     }
     #headerLogo{
-      width: 40px;
-      height: 40px;
+      width: 2.5rem;
+      height: 2.5rem;
     }
    }
     `;
