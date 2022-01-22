@@ -32,6 +32,7 @@ function Header() {
       variant="dark"
       sticky="top"
       expand="lg"
+      collapseOnSelect
     >
       <Container fluid="lg">
         <Navbar.Brand id="headerBrand">
