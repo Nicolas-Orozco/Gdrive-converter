@@ -13,27 +13,31 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 function ConvTemplate({ propsConfig: { inputSearchWord, inputReplaceWith } }) {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("Just an output?");
+  const [form, setForm] = useState(false);
   const RefConvert = useRef();
   const RefCopy = useRef();
   const btnConvert = () => {
     if (input.search(inputSearchWord) > 0 || input.length >= 65) {
+      setForm(true);
       setOutput(input.replace(inputSearchWord, inputReplaceWith));
       RefConvert.current.classList.replace("bi-boombox-fill", "bi-check-lg");
       setTimeout(() => {
         RefConvert.current.classList.replace("bi-check-lg", "bi-boombox-fill");
       }, 1500);
     } else {
+      setForm(false);
       setOutput("Invalid Link");
     }
   };
   const btnCopy = () => {
-    if (output !== "Invalid Link" && output !== "Can't copy empty output") {
+    if (form === true) {
       navigator.clipboard.writeText(output);
       RefCopy.current.classList.replace("bi-pencil-fill", "bi-check-lg");
       setTimeout(() => {
         RefCopy.current.classList.replace("bi-check-lg", "bi-pencil-fill");
       }, 1500);
     } else {
+      setForm(false);
       setOutput("Can't copy empty output");
     }
   };
