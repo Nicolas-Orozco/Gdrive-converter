@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   Form,
   ButtonGroup,
@@ -8,13 +8,20 @@ import {
   FormControl,
 } from "react-bootstrap";
 import PropTypes from "prop-types";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 function ConvTemplate({ propsConfig: { inputSearchWord, inputReplaceWith } }) {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("Just an output?");
+  const RefConvert = useRef();
+  const RefCopy = useRef();
   const btnConvert = () => {
-    if (input.search(inputSearchWord) > 0 || input.length >= 90) {
+    if (input.search(inputSearchWord) > 0 || input.length >= 65) {
       setOutput(input.replace(inputSearchWord, inputReplaceWith));
+      RefConvert.current.classList.replace("bi-boombox-fill", "bi-check-lg");
+      setTimeout(() => {
+        RefConvert.current.classList.replace("bi-check-lg", "bi-boombox-fill");
+      }, 1500);
     } else {
       setOutput("Invalid Link");
     }
@@ -22,6 +29,10 @@ function ConvTemplate({ propsConfig: { inputSearchWord, inputReplaceWith } }) {
   const btnCopy = () => {
     if (output !== "Invalid Link" && output !== "Can't copy empty output") {
       navigator.clipboard.writeText(output);
+      RefCopy.current.classList.replace("bi-pencil-fill", "bi-check-lg");
+      setTimeout(() => {
+        RefCopy.current.classList.replace("bi-check-lg", "bi-pencil-fill");
+      }, 1500);
     } else {
       setOutput("Can't copy empty output");
     }
@@ -67,13 +78,13 @@ function ConvTemplate({ propsConfig: { inputSearchWord, inputReplaceWith } }) {
               className="shadow"
             >
               <Button variant="primary" onClick={btnConvert} type="submit">
-                Convert
+                Convert <i className="bi bi-boombox-fill" ref={RefConvert} />
               </Button>
               <Button variant="success" onClick={btnCopy}>
-                Copy Output
+                Copy Output <i className="bi bi-pencil-fill" ref={RefCopy} />
               </Button>
               <Button variant="danger" onClick={btnDelete}>
-                Clear Input
+                Clear Input <i className="bi bi-eraser-fill" />
               </Button>
             </ButtonGroup>
           </ButtonToolbar>

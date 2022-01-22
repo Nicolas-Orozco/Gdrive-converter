@@ -7,7 +7,9 @@ function Reader() {
     <Container fluid="lg">
       <Row>
         <Col className="p-4 mb-3">
-          <h1 className="display-5 fw-bold">Converter to Reader Mode</h1>
+          <h1 className="display-5 fw-bold">
+            Converter to <span className="text-secondary">Reader Mode</span>
+          </h1>
           <hr />
           <ConvTemplate
             propsConfig={{

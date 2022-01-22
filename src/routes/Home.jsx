@@ -28,7 +28,7 @@ function Home() {
             <hr className="my-4" />
             <h2 className="display-5 fw-bold">Before you proceed</h2>
             <p className="lead">You need to do some steps:</p>
-            <ListGroup as="ol" numbered horizontal="md">
+            <ListGroup as="ol" numbered horizontal="md" className="text-center">
               <ListGroup.Item as="li" action variant="info">
                 Set the visibility of your file to &quot;Anyone with the
                 link&quot;, if you want to avoid manually granting access to the
