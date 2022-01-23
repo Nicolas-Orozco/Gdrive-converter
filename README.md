@@ -20,6 +20,6 @@ To learn React Bootstrap & Router and to help people share files more easily.
     - Slides
     - Drawings
 - Reader mode (PDFs, embeds, etc)
-- (Future feature) With File ID
+- With File ID (Video, audio)
 ## Website Link:
 https://gdrive-converter.vercel.app/
