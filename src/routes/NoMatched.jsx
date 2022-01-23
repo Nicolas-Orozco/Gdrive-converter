@@ -16,9 +16,11 @@ function NoMatched() {
     >
       <Row>
         <Col>
-          <h1 className="text-center font-monospace display-1 fw-bold">
-            Oops! <mark className="text-danger">404</mark> error encountered
-          </h1>
+          <header>
+            <h1 className="text-center font-monospace display-1 fw-bold">
+              Oops! <mark className="text-danger">404</mark> error encountered
+            </h1>
+          </header>
         </Col>
       </Row>
       <Row>

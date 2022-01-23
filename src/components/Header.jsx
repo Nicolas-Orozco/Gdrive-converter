@@ -81,11 +81,15 @@ function Header() {
             <Nav.Link as={NavLink} to="/reader" eventKey="6">
               <i className="bi bi-book-fill"> Reader Mode</i>
             </Nav.Link>
+            <Nav.Link as={NavLink} to="/id" eventKey="7">
+              <i className="bi bi-123"> With ID (Video, Audio, etc)</i>
+            </Nav.Link>
             <Nav.Link
               onClick={(e) => {
                 e.target.classList.remove("active");
               }}
               href="https://github.com/Nicolas-Orozco/Gdrive-converter"
+              eventKey="8"
             >
               <i className="bi bi-github"> Github Repo</i>
             </Nav.Link>

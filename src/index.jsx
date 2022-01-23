@@ -10,6 +10,7 @@ import NativeDocs from "./routes/NativeDocs";
 import NativeSlides from "./routes/NativeSlides";
 import NativeSheets from "./routes/NativeSheets";
 import NativeDrawings from "./routes/NativeDrawings";
+import WithId from "./routes/WithId";
 import NoMatched from "./routes/NoMatched";
 // Importing components
 import Header from "./components/Header";
@@ -25,6 +26,7 @@ ReactDOM.render(
       <Route path="/docs" element={<NativeDocs />} />
       <Route path="/sheets" element={<NativeSheets />} />
       <Route path="/draw" element={<NativeDrawings />} />
+      <Route path="/id" element={<WithId />} />
       <Route path="*" element={<NoMatched />} />
     </Routes>
     <Footer />

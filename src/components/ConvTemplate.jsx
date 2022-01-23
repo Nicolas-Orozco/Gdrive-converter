@@ -10,24 +10,66 @@ import {
 import PropTypes from "prop-types";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-function ConvTemplate({ propsConfig: { inputSearchWord, inputReplaceWith } }) {
+function ConvTemplate({
+  propsConfig: {
+    inputUseConcat = false,
+    inputSearchWord = "",
+    inputReplaceWith = "",
+  },
+}) {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("Just an output?");
   const [form, setForm] = useState(false);
   const RefConvert = useRef();
   const RefCopy = useRef();
   const btnConvert = () => {
-    if (input.search(inputSearchWord) > 0 || input.length >= 65) {
-      setForm(true);
-      setOutput(input.replace(inputSearchWord, inputReplaceWith));
-      RefConvert.current.classList.replace("bi-boombox-fill", "bi-check-lg");
-      setTimeout(() => {
-        RefConvert.current.classList.replace("bi-check-lg", "bi-boombox-fill");
-      }, 1500);
-    } else {
-      setForm(false);
-      setOutput("Invalid Link");
+    switch (inputUseConcat) {
+      case true:
+        if (input.length >= 25) {
+          setForm(true);
+          setOutput(`https://drive.google.com/uc?export=download&id=${input}`);
+          RefConvert.current.classList.replace(
+            "bi-boombox-fill",
+            "bi-check-lg"
+          );
+          setTimeout(() => {
+            RefConvert.current.classList.replace(
+              "bi-check-lg",
+              "bi-boombox-fill"
+            );
+          }, 1500);
+        } else {
+          console.log(inputUseConcat);
+          console.log("already using concat");
+          setForm(false);
+          setOutput("Invalid ID");
+        }
+        break;
+      case false:
+        if (input.search(inputSearchWord) > 0 || input.length >= 65) {
+          setForm(true);
+          setOutput(input.replace(inputSearchWord, inputReplaceWith));
+          RefConvert.current.classList.replace(
+            "bi-boombox-fill",
+            "bi-check-lg"
+          );
+          setTimeout(() => {
+            RefConvert.current.classList.replace(
+              "bi-check-lg",
+              "bi-boombox-fill"
+            );
+          }, 1500);
+        } else {
+          console.log(inputUseConcat);
+          console.log("not using concat");
+          setForm(false);
+          setOutput("Invalid Link");
+        }
+        break;
+      default:
+        return null;
     }
+    return undefined;
   };
   const btnCopy = () => {
     if (form === true) {
@@ -66,7 +108,6 @@ function ConvTemplate({ propsConfig: { inputSearchWord, inputReplaceWith } }) {
           >
             <InputGroup className="w-100">
               <FormControl
-                type="url"
                 placeholder="Replace me"
                 aria-label="Input group example"
                 aria-describedby="inputLabel"
@@ -113,7 +154,7 @@ ConvTemplate.propTypes = {
   propsConfig: PropTypes.shape({
     inputSearchWord: PropTypes.string,
     inputReplaceWith: PropTypes.string,
+    inputUseConcat: PropTypes.bool,
   }).isRequired,
 };
-
 export default ConvTemplate;
