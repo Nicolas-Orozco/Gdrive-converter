@@ -29,7 +29,8 @@ function WithId() {
                 </code>
                 <p className="lead mt-1 mb-1">
                   The ID of the file is always after the &quot;/d/&quot; and
-                  before the &quot;/view&quot; parts of your share link,
+                  before the &quot;/view&quot; or &quot;/edit&quot; parts of
+                  your share link,
                   <b> meaning that the ID of our link will be:</b>
                 </p>
                 <code>1tvHrCBnzKByMSxPkVJ2ei5yR6vZwnA5q</code>
