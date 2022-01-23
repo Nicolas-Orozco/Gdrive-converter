@@ -1,12 +1,7 @@
 import React from "react";
 // IMPORT React Bootstrap Components
-import {
-  Container,
-  Nav,
-  Navbar,
-  NavDropdown,
-  NavbarCollapse,
-} from "react-bootstrap";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 // IMPORT React Router components
 import { NavLink } from "react-router-dom";
 // IMPORT Assets
