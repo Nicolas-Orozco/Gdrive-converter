@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+// IMPORT React Bootstrap Components
 import {
   Form,
   ButtonGroup,
@@ -7,27 +8,41 @@ import {
   InputGroup,
   FormControl,
 } from "react-bootstrap";
+// IMPORT Proptypes
 import PropTypes from "prop-types";
+// IMPORT Bootstrap Icons
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 function ConvTemplate({
+  // Define default parameters
   propsConfig: {
     inputUseConcat = false,
     inputSearchWord = "",
     inputReplaceWith = "",
   },
 }) {
+  // Store input in state
   const [input, setInput] = useState("");
+  // Store output in state
   const [output, setOutput] = useState("Just an output?");
+  // Manage form in state
   const [form, setForm] = useState(false);
+  // Reference Icon in Convert Button
   const RefConvert = useRef();
+  // Reference Icon in Copy Button
   const RefCopy = useRef();
+  // Arrow function onClick Convert
   const btnConvert = () => {
+    // Control converter according UseConcat prop
     switch (inputUseConcat) {
       case true:
+        // Check minimum length
         if (input.length >= 25) {
+          // Validate Form
           setForm(true);
+          // Convert in output
           setOutput(`https://drive.google.com/uc?export=download&id=${input}`);
+          // Appear and dissapear check icon
           RefConvert.current.classList.replace(
             "bi-boombox-fill",
             "bi-check-lg"
@@ -39,14 +54,20 @@ function ConvTemplate({
             );
           }, 1500);
         } else {
+          // Invalidate form
           setForm(false);
+          // Send error
           setOutput("Invalid ID");
         }
         break;
       case false:
+        // Check if the word exists | Check minimum length
         if (input.search(inputSearchWord) > 0 || input.length >= 65) {
+          // Validate Form
           setForm(true);
+          // Convert in output
           setOutput(input.replace(inputSearchWord, inputReplaceWith));
+          // Appear and dissapear check icon
           RefConvert.current.classList.replace(
             "bi-boombox-fill",
             "bi-check-lg"
@@ -58,7 +79,9 @@ function ConvTemplate({
             );
           }, 1500);
         } else {
+          // Invalidate form
           setForm(false);
+          // Send error
           setOutput("Invalid Link");
         }
         break;
@@ -67,26 +90,36 @@ function ConvTemplate({
     }
     return undefined;
   };
+  // Arrow function onClick Copy
   const btnCopy = () => {
+    // Check if form is valid
     if (form === true) {
+      // Copy output to clipboard
       navigator.clipboard.writeText(output);
+      // Appear and dissapear check icon
       RefCopy.current.classList.replace("bi-pencil-fill", "bi-check-lg");
       setTimeout(() => {
         RefCopy.current.classList.replace("bi-check-lg", "bi-pencil-fill");
       }, 1500);
     } else {
+      // Invalidate form
       setForm(false);
+      // Send Error
       setOutput("Can't copy empty output");
     }
   };
+  // Arrow function onClick Delete
   const btnDelete = () => {
+    // Empty input
     setInput("");
   };
   return (
     <article>
       <Form
         onSubmit={(e) => {
+          // Prevent refresh of page
           e.preventDefault();
+          // Execute convert
           btnConvert();
         }}
         className="bg-light rounded-3 p-3 "
@@ -107,9 +140,15 @@ function ConvTemplate({
                 placeholder="Replace me"
                 aria-label="Input group example"
                 aria-describedby="inputLabel"
-                value={input}
+                value={
+                  // Use the value of state
+                  input
+                }
                 maxLength="125"
-                onChange={(e) => setInput(e.target.value)}
+                onChange={
+                  // Pass the value of input to state
+                  (e) => setInput(e.target.value)
+                }
                 className="shadow-sm"
               />
             </InputGroup>
@@ -136,7 +175,10 @@ function ConvTemplate({
           </Form.Label>
           <FormControl
             type="url"
-            value={output}
+            value={
+              // Use the value of state
+              output
+            }
             readOnly
             aria-label="Input group example"
             className="shadow-sm"
@@ -147,6 +189,7 @@ function ConvTemplate({
   );
 }
 ConvTemplate.propTypes = {
+  // Define prop types
   propsConfig: PropTypes.shape({
     inputSearchWord: PropTypes.string,
     inputReplaceWith: PropTypes.string,

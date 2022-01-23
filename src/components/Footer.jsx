@@ -1,8 +1,11 @@
 import React from "react";
+// IMPORT React Bootstrap Components
 import { Navbar, Container } from "react-bootstrap";
+// IMPORT Bootstrap Icons
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 function Footer() {
+  // Styles in Theme for later use
   const Theme = `
   #footerHeartIcon{
     -webkit-animation : grow 2s infinite alternate;
@@ -47,6 +50,7 @@ function Footer() {
             in Peru
           </Navbar.Brand>
         </Container>
+        {/* Use the styles of Theme */}
         <style type="text/css">{Theme}</style>
       </Navbar>
     </footer>

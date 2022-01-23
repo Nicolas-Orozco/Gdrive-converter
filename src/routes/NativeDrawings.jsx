@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// IMPORT React Bootstrap Components
 import {
   Container,
   Row,
@@ -7,9 +8,11 @@ import {
   Dropdown,
   ButtonGroup,
 } from "react-bootstrap";
+// IMPORT Converter component
 import ConvTemplate from "../components/ConvTemplate";
 
 function NativeDrawings() {
+  // State for export format
   const [format, setFormat] = useState("Select an export format");
   return (
     <Container fluid="lg">
@@ -29,6 +32,7 @@ function NativeDrawings() {
                 id="bg-vertical-dropdown-3"
                 variant="info"
               >
+                {/* // Change format to SVG */}
                 <Dropdown.Item
                   eventKey="1"
                   onClick={() => {
@@ -37,6 +41,7 @@ function NativeDrawings() {
                 >
                   SVG
                 </Dropdown.Item>
+                {/* // Change format to PDF */}
                 <Dropdown.Item
                   eventKey="2"
                   onClick={() => {
@@ -45,6 +50,7 @@ function NativeDrawings() {
                 >
                   PDF
                 </Dropdown.Item>
+                {/* // Change format to PNG */}
                 <Dropdown.Item
                   eventKey="3"
                   onClick={() => {
@@ -53,6 +59,7 @@ function NativeDrawings() {
                 >
                   PNG
                 </Dropdown.Item>
+                {/* // Change format to JPG */}
                 <Dropdown.Item
                   eventKey="4"
                   onClick={() => {
@@ -63,6 +70,7 @@ function NativeDrawings() {
                 </Dropdown.Item>
               </DropdownButton>
             </ButtonGroup>
+            {/* Render emoji with conditions of empty and selected format */}
             {format === "Select an export format" ? (
               <i
                 className="bi bi-emoji-smile-upside-down my-auto text-muted fs-1"
@@ -76,6 +84,7 @@ function NativeDrawings() {
             )}
           </section>
           {(() => {
+            // Render converter, props depending of format
             switch (format) {
               case "SVG":
                 return (

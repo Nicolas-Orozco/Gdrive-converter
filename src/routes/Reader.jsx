@@ -1,5 +1,7 @@
 import React from "react";
+// IMPORT React Bootstrap Components
 import { Container, Row, Col } from "react-bootstrap";
+// IMPORT Converter component
 import ConvTemplate from "../components/ConvTemplate";
 
 function Reader() {
@@ -11,6 +13,7 @@ function Reader() {
             Converter to <span className="text-secondary">Reader Mode</span>
           </h1>
           <hr />
+          {/* Render converter searching edit and replacing preview */}
           <ConvTemplate
             propsConfig={{
               inputSearchWord: "/edit",

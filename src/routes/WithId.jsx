@@ -1,5 +1,7 @@
 import React from "react";
+// IMPORT React Bootstrap Components
 import { Container, Row, Col, Accordion } from "react-bootstrap";
+// IMPORT Converter component
 import ConvTemplate from "../components/ConvTemplate";
 
 function WithId() {
@@ -38,6 +40,7 @@ function WithId() {
             </Accordion.Item>
           </Accordion>
           <hr />
+          {/* Render Converter using concatenation */}
           <ConvTemplate
             propsConfig={{
               inputUseConcat: true,

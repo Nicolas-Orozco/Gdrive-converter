@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
+// IMPORT React Router components
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 
 import reportWebVitals from "./reportWebVitals";
-// Importing Routes
+// IMPORT Routes
 import Home from "./routes/Home";
 import Reader from "./routes/Reader";
 import NativeDocs from "./routes/NativeDocs";
@@ -12,7 +13,7 @@ import NativeSheets from "./routes/NativeSheets";
 import NativeDrawings from "./routes/NativeDrawings";
 import WithId from "./routes/WithId";
 import NoMatched from "./routes/NoMatched";
-// Importing components
+// IMPORT Components
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -34,7 +35,4 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

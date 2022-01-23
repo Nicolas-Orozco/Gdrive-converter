@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// IMPORT React Bootstrap Components
 import {
   Container,
   Row,
@@ -7,9 +8,11 @@ import {
   Dropdown,
   ButtonGroup,
 } from "react-bootstrap";
+// IMPORT Converter component
 import ConvTemplate from "../components/ConvTemplate";
 
 function NativeSheets() {
+  // State for export format
   const [format, setFormat] = useState("Select an export format");
   return (
     <Container fluid="lg">
@@ -29,6 +32,7 @@ function NativeSheets() {
                 id="bg-vertical-dropdown-3"
                 variant="info"
               >
+                {/* // Change format to CSV */}
                 <Dropdown.Item
                   eventKey="1"
                   onClick={() => {
@@ -37,6 +41,7 @@ function NativeSheets() {
                 >
                   CSV
                 </Dropdown.Item>
+                {/* // Change format to XLSX */}
                 <Dropdown.Item
                   eventKey="2"
                   onClick={() => {
@@ -45,6 +50,7 @@ function NativeSheets() {
                 >
                   XLSX
                 </Dropdown.Item>
+                {/* // Change format to PDF */}
                 <Dropdown.Item
                   eventKey="3"
                   onClick={() => {
@@ -55,6 +61,7 @@ function NativeSheets() {
                 </Dropdown.Item>
               </DropdownButton>
             </ButtonGroup>
+            {/* Render emoji with conditions of empty and selected format */}
             {format === "Select an export format" ? (
               <i
                 className="bi bi-emoji-smile-upside-down my-auto text-muted fs-1"
@@ -68,6 +75,7 @@ function NativeSheets() {
             )}
           </section>
           {(() => {
+            // Render converter, props depending of format
             switch (format) {
               case "CSV":
                 return (

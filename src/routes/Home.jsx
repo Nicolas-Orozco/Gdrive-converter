@@ -1,5 +1,7 @@
 import React from "react";
+// IMPORT React Bootstrap Components
 import { Container, Row, Col, ListGroup } from "react-bootstrap";
+// IMPORT Bootstrap Icons
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 function Home() {

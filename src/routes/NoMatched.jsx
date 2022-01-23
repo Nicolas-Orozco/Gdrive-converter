@@ -1,8 +1,11 @@
 import React from "react";
+// IMPORT React Bootstrap Components
 import { Container, Row, Col, Button } from "react-bootstrap";
+// IMPORT React Router components
 import { Link } from "react-router-dom";
 
 function NoMatched() {
+  // Styles in Theme for later use
   const Theme = `
   #msg404 {
     min-height: 80vh;
@@ -30,6 +33,7 @@ function NoMatched() {
           </Button>
         </Col>
       </Row>
+      {/* Use the styles of Theme */}
       <style type="text/css">{Theme}</style>
     </Container>
   );
