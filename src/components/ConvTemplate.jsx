@@ -39,8 +39,6 @@ function ConvTemplate({
             );
           }, 1500);
         } else {
-          console.log(inputUseConcat);
-          console.log("already using concat");
           setForm(false);
           setOutput("Invalid ID");
         }
@@ -60,8 +58,6 @@ function ConvTemplate({
             );
           }, 1500);
         } else {
-          console.log(inputUseConcat);
-          console.log("not using concat");
           setForm(false);
           setOutput("Invalid Link");
         }
