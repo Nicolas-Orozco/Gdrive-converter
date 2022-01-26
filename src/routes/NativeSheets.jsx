@@ -10,10 +10,14 @@ import {
 } from "react-bootstrap";
 // IMPORT Converter component
 import ConvTemplate from "../components/ConvTemplate";
+// IMPORT Custom hook
+import useEmojiFace from "../hooks/useEmojiFace";
 
 function NativeSheets() {
   // State for export format
   const [format, setFormat] = useState("Select an export format");
+  // Hook for is emoji
+  const isEmojiFace = useEmojiFace(format);
   return (
     <Container fluid="lg">
       <Row>
@@ -61,17 +65,14 @@ function NativeSheets() {
                 </Dropdown.Item>
               </DropdownButton>
             </ButtonGroup>
-            {/* Render emoji with conditions of empty and selected format */}
-            {format === "Select an export format" ? (
-              <i
-                className="bi bi-emoji-smile-upside-down my-auto text-muted fs-1"
-                alt="inverted smile emoji"
-              />
-            ) : (
+            {/* Render emoji with conditions of true and false */}
+            {isEmojiFace ? (
               <i
                 className="bi bi-emoji-smile my-auto text-black fs-1"
                 alt="smile emoji"
               />
+            ) : (
+              <i />
             )}
           </section>
           {(() => {
