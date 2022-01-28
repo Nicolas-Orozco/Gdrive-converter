@@ -9,20 +9,20 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Loading from "./components/Loading";
 // IMPORT Routes with lazy loading and delay
-const Home = lazy(() => pMinDelay(import("./routes/Home"), 550));
-const Reader = lazy(() => pMinDelay(import("./routes/Reader"), 550));
-const NativeDocs = lazy(() => pMinDelay(import("./routes/NativeDocs"), 550));
+const Home = lazy(() => pMinDelay(import("./routes/Home"), 500));
+const Reader = lazy(() => pMinDelay(import("./routes/Reader"), 500));
+const NativeDocs = lazy(() => pMinDelay(import("./routes/NativeDocs"), 500));
 const NativeSlides = lazy(() =>
-  pMinDelay(import("./routes/NativeSlides"), 550)
+  pMinDelay(import("./routes/NativeSlides"), 500)
 );
 const NativeSheets = lazy(() =>
-  pMinDelay(import("./routes/NativeSheets"), 550)
+  pMinDelay(import("./routes/NativeSheets"), 500)
 );
 const NativeDrawings = lazy(() =>
-  pMinDelay(import("./routes/NativeDrawings"), 550)
+  pMinDelay(import("./routes/NativeDrawings"), 500)
 );
-const WithId = lazy(() => pMinDelay(import("./routes/WithId"), 550));
-const NoMatched = lazy(() => pMinDelay(import("./routes/NoMatched"), 550));
+const WithId = lazy(() => pMinDelay(import("./routes/WithId"), 500));
+const NoMatched = lazy(() => pMinDelay(import("./routes/NoMatched"), 500));
 // Render routes
 ReactDOM.render(
   <BrowserRouter>
