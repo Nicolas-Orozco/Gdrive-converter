@@ -8,6 +8,7 @@ function NoMatched() {
   // Styles in Theme for later use
   const Theme = `
   #msg404 {
+    min-height: 80%;
     min-height: 80vh;
   }
   `;

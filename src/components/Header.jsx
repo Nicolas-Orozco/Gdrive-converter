@@ -98,7 +98,7 @@ function Header() {
             </Nav.Link>
             <Nav.Link
               onClick={(e) => {
-                e.current.classList.remove("active");
+                e.current.classList.toggle("active");
               }}
               href="https://github.com/Nicolas-Orozco/Gdrive-converter"
               eventKey="8"
