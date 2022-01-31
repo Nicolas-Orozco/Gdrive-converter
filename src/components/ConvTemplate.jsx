@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 // IMPORT React Bootstrap Components
 import {
   Form,
@@ -27,10 +27,10 @@ function ConvTemplate({
   const [output, setOutput] = useState("Just an output?");
   // Manage form in state
   const [form, setForm] = useState(false);
-  // Reference Icon in Convert Button
-  const RefConvert = useRef();
-  // Reference Icon in Copy Button
-  const RefCopy = useRef();
+  // Manage convert icon class
+  const [iconConvert, setIconConvert] = useState("bi-boombox-fill");
+  // Manage copy icon class
+  const [iconCopy, setIconCopy] = useState("bi-pencil-fill");
   // Arrow function onClick Convert
   const btnConvert = () => {
     // Control converter according UseConcat prop
@@ -43,15 +43,9 @@ function ConvTemplate({
           // Convert in output
           setOutput(`https://drive.google.com/uc?export=download&id=${input}`);
           // Appear and dissapear check icon
-          RefConvert.current.classList.replace(
-            "bi-boombox-fill",
-            "bi-check-lg"
-          );
+          setIconConvert("bi-check-lg");
           setTimeout(() => {
-            RefConvert.current.classList.replace(
-              "bi-check-lg",
-              "bi-boombox-fill"
-            );
+            setIconConvert("bi-boombox-fill");
           }, 1500);
         } else {
           // Invalidate form
@@ -68,15 +62,9 @@ function ConvTemplate({
           // Convert in output
           setOutput(input.replace(inputSearchWord, inputReplaceWith));
           // Appear and dissapear check icon
-          RefConvert.current.classList.replace(
-            "bi-boombox-fill",
-            "bi-check-lg"
-          );
+          setIconConvert("bi-check-lg");
           setTimeout(() => {
-            RefConvert.current.classList.replace(
-              "bi-check-lg",
-              "bi-boombox-fill"
-            );
+            setIconConvert("bi-boombox-fill");
           }, 1500);
         } else {
           // Invalidate form
@@ -97,9 +85,9 @@ function ConvTemplate({
       // Copy output to clipboard
       navigator.clipboard.writeText(output);
       // Appear and dissapear check icon
-      RefCopy.current.classList.replace("bi-pencil-fill", "bi-check-lg");
+      setIconCopy("bi-check-lg");
       setTimeout(() => {
-        RefCopy.current.classList.replace("bi-check-lg", "bi-pencil-fill");
+        setIconCopy("bi-pencil-fill");
       }, 1500);
     } else {
       // Invalidate form
@@ -158,10 +146,12 @@ function ConvTemplate({
               className="shadow"
             >
               <Button variant="primary" onClick={btnConvert} type="submit">
-                Convert <i className="bi bi-boombox-fill" ref={RefConvert} />
+                {/* Use icon convert state as class */}
+                Convert <i className={`bi ${iconConvert}`} />
               </Button>
               <Button variant="success" onClick={btnCopy}>
-                Copy Output <i className="bi bi-pencil-fill" ref={RefCopy} />
+                {/* Use icon copy state as class */}
+                Copy Output <i className={`bi ${iconCopy}`} />
               </Button>
               <Button variant="danger" onClick={btnDelete}>
                 Clear Input <i className="bi bi-eraser-fill" />
