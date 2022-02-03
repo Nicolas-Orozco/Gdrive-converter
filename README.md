@@ -34,4 +34,4 @@ if you still feel a bit skeptical, you can check the code yourself :wink:
 
 ## Link:
 
-:arrow_right: [Click me!](https://gdrive-converter.vercel.app/);
+:arrow_right: [Click me!](https://gdrive-converter.vercel.app/)
