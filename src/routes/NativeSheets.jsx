@@ -66,13 +66,11 @@ function NativeSheets() {
               </DropdownButton>
             </ButtonGroup>
             {/* Render emoji with conditions of true and false */}
-            {isEmojiFace ? (
+            {isEmojiFace && (
               <i
                 className="bi bi-emoji-smile my-auto text-black fs-1"
                 alt="smile emoji"
               />
-            ) : (
-              <i />
             )}
           </section>
           {(() => {
